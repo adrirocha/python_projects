@@ -26,6 +26,8 @@ def pickle_para_contatos(caminho):
 def contatos_para_json(contatos, caminho):
     with open(caminho, mode='w') as arquivo:
         json.dump(contatos, arquivo, default=_contato_para_json) #Salvar dados(contatos) em um arquivo
+        # código omitido
+        #json.dump(contatos, arquivo, default=lambda contato: contato.__dict__)
 
 def _contato_para_json(contato):
     return contato.__dict__
